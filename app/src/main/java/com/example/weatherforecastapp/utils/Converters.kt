@@ -52,13 +52,13 @@ class Converters {
 //            if (MySharedPreferences.getLanguage().equals(Constants.ENGLISH)){
             return when (MySharedPreferences.getTemperature()) {
                 Constants.TEMP_CELSIUS_VALUES -> {
-                    "${kelvinToCelsius(temp).toInt()} ${context.getString(R.string.celsiusUnit)}"
+                    "${kelvinToCelsius(temp).toInt()}${context.getString(R.string.celsiusUnit)}"
                 }
                 Constants.TEMP_FAHRENHEIT_VALUES -> {
-                    "${fromKelvinToFahrenheit(temp).toInt()} ${context.getString(R.string.fahrenheitUnit)}"
+                    "${fromKelvinToFahrenheit(temp).toInt()}${context.getString(R.string.fahrenheitUnit)}"
                 }
                 else -> {
-                    "${temp.toInt()} ${context.getString(R.string.kelvinUnit)}"
+                    "${temp.toInt()}${context.getString(R.string.kelvinUnit)}"
                 }
             }
 

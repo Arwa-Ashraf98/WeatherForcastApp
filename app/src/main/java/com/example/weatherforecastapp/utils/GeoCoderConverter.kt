@@ -27,10 +27,10 @@ class GeoCoderConverter {
                 if (address.premises != null)
                     stringBuffer.append(address.premises).append(",\n ")
                 stringBuffer.append(address.subAdminArea).append("\n")
-                stringBuffer.append(address.locality).append(",\n ")
-                stringBuffer.append(address.adminArea).append(",\n ")
-                stringBuffer.append(address.countryName).append(",\n ")
-                stringBuffer.append(address.postalCode)
+                stringBuffer.append(address.locality)
+//                stringBuffer.append(address.adminArea).append(",\n ")
+//                stringBuffer.append(address.countryName).append(",\n ")
+//                stringBuffer.append(address.postalCode)
             }
 
             return stringBuffer.toString()

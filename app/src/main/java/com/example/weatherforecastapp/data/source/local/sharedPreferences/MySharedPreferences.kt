@@ -62,7 +62,7 @@ class MySharedPreferences private constructor() {
 
         fun getTemperature(): String? {
             return getSharedPreferences()
-                .getString(Constants.TEMPERATURE_CHOICE, Constants.TEMP_CELSIUS_VALUES)
+                .getString(Constants.TEMPERATURE_CHOICE, Constants.TEMP_KELVIN_VALUES)
         }
 
         fun setLanguage(language: String?) {

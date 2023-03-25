@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="@id/textView_time"
         app:layout_constraintStart_toStartOf="@id/textView_time"
         app:layout_constraintTop_toBottomOf="@id/textView_time"
-        app:tint="@color/navy" />
+       />
 
 
     <TextView

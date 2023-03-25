@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.weatherforecastapp.data.models.Hourly
 import com.example.weatherforecastapp.databinding.ItemHoursBinding
+import com.example.weatherforecastapp.utils.Constants
 import com.example.weatherforecastapp.utils.HandleIcon
 import com.example.weatherforecastapp.utils.Converters
 
@@ -43,7 +44,8 @@ class HourlyAdapter : RecyclerView.Adapter<HourlyAdapter.Holder>() {
             textViewTime.text = Converters.convertTimeStampIntoHours(model.dt)
             Glide
                 .with(holder.itemView.context)
-                .load(HandleIcon.getIcon(model.weather[0].icon))
+//                .load(HandleIcon.getIcon(model.weather[0].icon))
+                .load(Constants.WEATHER_IMAGE_BASE_URL+model.weather[0].icon+".png")
                 .into(imageHour)
         }
 
