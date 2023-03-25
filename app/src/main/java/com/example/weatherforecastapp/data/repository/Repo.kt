@@ -37,19 +37,19 @@ class Repo private constructor(
         return localSource.saveWeatherResponseAfterDelete(modelRoot)
     }
 
-    override suspend fun setLocalization(language: String) {
+    override fun setLocalization(language: String) {
         MySharedPreferences.setLanguage(language)
     }
 
-    override suspend fun setWindSpeed(windSpeedChoice: String) {
+    override fun setWindSpeed(windSpeedChoice: String) {
         MySharedPreferences.setWindSpeed(windSpeedChoice)
     }
 
-    override suspend fun setTemp(tempChoice: String) {
+    override fun setTemp(tempChoice: String) {
         MySharedPreferences.setTemperature(tempChoice)
     }
 
-    override suspend fun setLocation(locationChoice: String) {
+    override fun setLocation(locationChoice: String) {
         MySharedPreferences.setLocation(locationChoice)
     }
 

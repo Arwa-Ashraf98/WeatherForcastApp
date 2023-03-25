@@ -9,31 +9,23 @@ import kotlinx.coroutines.launch
 class SettingsViewModel(private val repo: RepoInterface) : ViewModel() {
 
     fun setLanguage(language: String) {
-        viewModelScope.launch(Dispatchers.Main) {
-            repo.setLocalization(language)
-        }
+        repo.setLocalization(language)
+
     }
 
     fun setWindSpeed(windSpeed: String) {
-        viewModelScope.launch(Dispatchers.Main) {
-            repo.setWindSpeed(windSpeed)
-        }
+        repo.setWindSpeed(windSpeed)
     }
 
     fun setTemp(tempChoice: String) {
-        viewModelScope.launch(Dispatchers.Main)
-        {
-            repo.setTemp(tempChoice)
-        }
+        repo.setTemp(tempChoice)
     }
 
     fun setLocation(locationChoice: String) {
-        viewModelScope.launch(Dispatchers.Main)
-        {
-            repo.setTemp(locationChoice)
-        }
-    }
 
+        repo.setTemp(locationChoice)
+
+    }
 
 
 }

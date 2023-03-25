@@ -37,10 +37,9 @@ class HomeViewModel(private val repo: RepoInterface) : ViewModel() {
             }.collect {
                 if (it.isSuccessful) {
                     val data = it.body()
-                    repo.saveWeatherData(data as ModelRoot)
-                    mutableStateFlow.value = APIState.OnSuccess(data)
+//                    repo.saveWeatherData(data as ModelRoot)
+                    mutableStateFlow.value = APIState.OnSuccess(data as ModelRoot)
                 } else {
-
 
 
                     error.postValue(it.errorBody().toString())
