@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_130sdp"
+    android:layout_margin="@dimen/_16sdp"
+    android:elevation="@dimen/_16sdp"
+    android:backgroundTint="@color/haf_trans3"
+    android:paddingVertical="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_32sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/haf_trans3">
+
+        <TextView
+            android:id="@+id/startAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:text="@string/start"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/verticalBarrier"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/start"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="@id/startAt"
+            app:layout_constraintTop_toBottomOf="@id/startAt" />
+
+
+        <TextView
+            android:id="@+id/endAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:text="@string/end"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/startAt"
+            app:layout_constraintTop_toBottomOf="@id/textView_start_date" />
+
+        <TextView
+            android:id="@+id/textView_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="@string/start"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="@id/endAt"
+            app:layout_constraintStart_toStartOf="@id/endAt"
+            app:layout_constraintTop_toBottomOf="@id/endAt" />
+
+        <ImageView
+            android:id="@+id/image_alert"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/clock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/verticalBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="image_alert" />
+
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:background="@color/text_white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_alert"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

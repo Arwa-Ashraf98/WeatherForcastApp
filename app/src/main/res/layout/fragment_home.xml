@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/i_9"
+    tools:context=".ui.home.view.HomeFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_view_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/armata"
+                    android:text="@string/cairo"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/_32ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/armata"
+                    android:text="@string/mon_nov27_9_04"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="@id/text_view_city"
+                    app:layout_constraintStart_toStartOf="@id/text_view_city"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_city" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_weather_home"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:tint="@color/navy"
+                    app:layout_constraintEnd_toEndOf="@id/text_view_city"
+                    app:layout_constraintStart_toStartOf="@id/text_view_city"
+                    app:layout_constraintTop_toBottomOf="@id/textView_date"
+                    app:srcCompat="@drawable/ic_cloud_queue_dark" />
+
+                <TextView
+                    android:id="@+id/textView_weatherDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/armata"
+                    android:text="@string/clear_sky"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="@id/text_view_city"
+                    app:layout_constraintStart_toStartOf="@id/text_view_city"
+                    app:layout_constraintTop_toBottomOf="@id/image_weather_home" />
+
+
+                <TextView
+                    android:id="@+id/textView_temperature_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/armata"
+                    android:text="@string/_1_c"
+                    android:textColor="@color/navy"
+                    android:textSize="@dimen/_40ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView_weatherDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/textView_temperature_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/textView_temperature_home"
+                    app:layout_constraintTop_toBottomOf="@id/textView_weatherDescription"
+                    app:layout_constraintTop_toTopOf="@id/textView_temperature_home">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/image_humidity"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/drop" />
+
+                        <TextView
+                            android:id="@+id/textView_humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_32sdp"
+                            android:fontFamily="@font/armata"
+                            android:text="@string/Percent"
+                            android:textColor="@color/navy"
+                            android:textSize="@dimen/_32sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/image_windSpeed"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/wind" />
+
+                        <TextView
+                            android:id="@+id/textView_windSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_32sdp"
+                            android:fontFamily="@font/armata"
+                            android:text="@string/Percent"
+                            android:textColor="@color/navy"
+                            android:textSize="@dimen/_32sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_hours"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginHorizontal="@dimen/_14sdp"
+                    android:layout_marginVertical="@dimen/_16sdp"
+                    android:backgroundTint="@color/haf_transparent"
+                    android:elevation="@dimen/_18sdp"
+                    app:cardCornerRadius="@dimen/_24sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView_temperature_home">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:descendantFocusability="blocksDescendants">
+
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_32sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/armata"
+                            android:maxEms="16"
+                            android:text="@string/this_condition_will_continue_to_the_rest_of_the_day"
+                            android:textColor="@color/haf_trans3"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="0dp"
+                            android:layout_height="0.6dp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:background="@color/navy2"
+                            app:layout_constraintStart_toStartOf="@id/description"
+                            app:layout_constraintTop_toBottomOf="@id/description" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_hours"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/_8sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/line1"
+                            tools:itemCount="10"
+                            tools:listitem="@layout/item_hours" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginHorizontal="@dimen/_14sdp"
+                    android:layout_marginVertical="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_150sdp"
+                    android:backgroundTint="@color/haf_transparent"
+                    android:elevation="@dimen/_18sdp"
+                    app:cardCornerRadius="@dimen/_24sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_hours">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:descendantFocusability="blocksDescendants">
+
+                        <ImageView
+                            android:id="@+id/calender"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:contentDescription="@string/image"
+                            android:src="@drawable/baseline_calendar_month_24"
+                            app:layout_constraintBottom_toBottomOf="@id/nextDays"
+                            app:layout_constraintEnd_toStartOf="@id/nextDays"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/nextDays"
+                            app:tint="@color/haf_trans3" />
+
+                        <TextView
+                            android:id="@+id/nextDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/armata"
+                            android:maxEms="16"
+                            android:text="@string/next_7_days"
+                            android:textColor="@color/haf_trans3"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/calender"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/line2"
+                            android:layout_width="0dp"
+                            android:layout_height="0.6dp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:background="@color/navy2"
+                            app:layout_constraintStart_toStartOf="@id/calender"
+                            app:layout_constraintTop_toBottomOf="@id/nextDays" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_days"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:layout_marginBottom="@dimen/_75sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/line2"
+                            tools:itemCount="7"
+                            tools:listitem="@layout/item_days" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
