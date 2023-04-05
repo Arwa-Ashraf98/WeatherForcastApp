@@ -6,6 +6,7 @@ import com.example.weatherforecastapp.data.repository.RepoInterface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
 class SettingsViewModel(private val repo: RepoInterface) : ViewModel() {
 
     fun setLanguage(language: String) {
@@ -21,10 +22,8 @@ class SettingsViewModel(private val repo: RepoInterface) : ViewModel() {
         repo.setTemp(tempChoice)
     }
 
-    fun setLocation(locationChoice: String) {
-
-        repo.setTemp(locationChoice)
-
+    fun setAlarms(alarm: String) {
+        repo.setAlarm(alarm)
     }
 
 

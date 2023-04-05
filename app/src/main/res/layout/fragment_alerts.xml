@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.alerts.AlertsFragment">
+    tools:context=".ui.alerts.view.AlertsFragment">
 
 
     <ImageView
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
             android:backgroundTint="@color/baby_blue"
             android:contentDescription="@string/btn"
             android:elevation="@dimen/_16sdp"

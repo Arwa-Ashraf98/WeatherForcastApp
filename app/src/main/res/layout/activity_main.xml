@@ -8,6 +8,7 @@
     tools:context=".ui.main.MainActivity">
 
 
+
    <fragment
        android:id="@+id/nav_host_fragment_home"
        android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,6 +20,19 @@
        app:layout_constraintBottom_toBottomOf="parent"
        app:defaultNavHost="true"
        app:navGraph="@navigation/nav_graph" />
+
+   <TextView
+       android:id="@+id/noInterNetTextView"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_15sdp"
+       app:layout_constraintTop_toTopOf="parent"
+       android:background="@color/red"
+       android:text="@string/no_internet"
+       android:textColor="@color/white"
+       android:gravity="center"
+       android:textStyle="bold"
+       android:visibility="gone"
+       />
 
 
    <com.google.android.material.bottomnavigation.BottomNavigationView

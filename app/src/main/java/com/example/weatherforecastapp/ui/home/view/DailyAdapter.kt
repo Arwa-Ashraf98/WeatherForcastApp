@@ -6,6 +6,7 @@ import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.weatherforecastapp.R
 import com.example.weatherforecastapp.data.models.Daily
 import com.example.weatherforecastapp.databinding.ItemDaysBinding
 import com.example.weatherforecastapp.utils.Converters
@@ -40,7 +41,7 @@ class DailyAdapter : RecyclerView.Adapter<DailyAdapter.Holder>() {
         val model = list[position]
         holder.binding.apply {
             textviewItemDayDay.text =
-                Converters.convertTimestampToString(model.dt, Converters.DAY_PATTERN)
+                Converters.convertTimestampToString(model.dt.toLong(), Converters.DAY_ONLY)
             textviewItemDayMaxDegree.text =
                 Converters.convertTemperature(model.temp.max, holder.binding.root.context)
             textviewItemDayMinDegree.text =
@@ -48,6 +49,7 @@ class DailyAdapter : RecyclerView.Adapter<DailyAdapter.Holder>() {
             textviewItemDayDescription.text = model.weather[0].description
             Glide.with(holder.binding.root.context)
                 .load(HandleIcon.getIcon(model.weather[0].icon))
+                .placeholder(R.drawable.loading)
                 .into(imageItemDayIcon)
         }
     }

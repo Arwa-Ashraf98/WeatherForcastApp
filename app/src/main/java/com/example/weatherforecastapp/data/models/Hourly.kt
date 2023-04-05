@@ -1,18 +1,18 @@
 package com.example.weatherforecastapp.data.models
 
 data class Hourly(
-    val clouds: Double,
-    val dew_point: Double,
-    val dt: Long,
+    val clouds: String,
+    val dew_poString: Double,
+    val dt: String,
     val feels_like: Double,
-    val humidity: Double,
-    val pop: Double,
-    val pressure: Double,
+    val humidity: String,
+    val pop: String,
+    val pressure: String,
     val temp: Double,
     val uvi: Double,
-    val visibility: Double,
+    val visibility: String,
     val weather: List<Weather>,
-    val wind_deg: Double,
+    val wind_deg: String,
     val wind_gust: Double,
     val wind_speed: Double
 )

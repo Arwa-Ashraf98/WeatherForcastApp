@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">WeatherForecastApp</string>
+    <string name="app_name" translatable="false">WeatherForecastApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="weather_alarms">Weather Alarms</string>
+    <string name="weather_alarms" translatable="false">Weather Alarms</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
@@ -29,7 +29,7 @@
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
     <string name="cairo">Cairo</string>
-    <string name="mon_nov27_9_04">Mon, Nov27 - 9:04</string>
+    <string name="mon_nov27_9_04">Mon, Nov27 – 9:04</string>
     <string name="clear_sky">Clear Sky</string>
     <string name="_1_c">1°C</string>
     <string name="fahrenheit">Fahrenheit</string>
@@ -44,4 +44,41 @@
     <string name="next_7_days">next 7 Days</string>
     <string name="time">2PM</string>
     <string name="today">Today</string>
+    <string name="wind">WIND</string>
+    <string name="pressure">PRESSURE</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="feelsLike">Feels Like</string>
+    <string name="clouds">CLOUDS</string>
+    <string name="enter_your_city">Enter your City</string>
+    <string name="no_internet">No Internet</string>
+    <string name="from">From</string>
+    <string name="start_date">Enter Start Date</string>
+    <string name="enter_the_start_time">Enter the Start Time</string>
+    <string name="to">To</string>
+    <string name="enter_end_date">Enter End Date</string>
+    <string name="enter_end_time">Enter End Time</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="alarms">Alarms</string>
+    <string name="alarm">Alarm</string>
+    <string name="notification">Notification</string>
+    <string name="required">required</string>
+    <string name="you_have_to_select_one">You have to select one of them</string>
+    <string name="slould_use_net">You should use INTERNET!!</string>
+    <string name="try_later">you can try later</string>
+    <string name="continue_fill_data">Continue filling data</string>
+    <string name="sure_cancel">Are you sure that you want to cancel?</string>
+    <string name="end_date_larger_than_start_date">\" Start Date must  be less than end date \"</string>
+    <string name="added">Data is Adde d successfully</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="place">Place</string>
+    <string name="cance_delete">You Cancelled the Deletion Process</string>
+    <string name="sure_to_delet">Are you sure that you want to delete this item ?</string>
+    <string name="failed_get_data">Failed to get Data try later</string>
+    <string name="no_intenrnet">OOPS there is No network Please Turn on WIFI and try later</string>
+    <string name="weather_alarm">Weather Alarm</string>
+    <string name="channel">alarm channel</string>
+    <string name="description">channel description</string>
+    <string name="des">description</string>
+    <string name="choose_time">Choose Time</string>
 </resources>

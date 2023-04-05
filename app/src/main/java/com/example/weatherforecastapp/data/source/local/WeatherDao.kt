@@ -1,6 +1,9 @@
 package com.example.weatherforecastapp.data.source.local
 
 import androidx.room.*
+import com.example.weatherforecastapp.data.models.AlertEntity
+import com.example.weatherforecastapp.data.models.Alerts
+import com.example.weatherforecastapp.data.models.FavAddress
 import com.example.weatherforecastapp.data.models.ModelRoot
 import kotlinx.coroutines.flow.Flow
 
@@ -25,6 +28,30 @@ interface WeatherDao {
         }
         insertWeatherResponse(weatherData)
     }
+
+
+    // favourite location
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertFavLocation(favAddress: FavAddress)
+
+    @Query("select * from FavouriteTable")
+    suspend fun getAllFavouritePlaces(): List<FavAddress>
+
+    @Delete
+    suspend fun deleteFavPlace(favAddress: FavAddress)
+
+    // Alerts
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAlert(alertEntity: AlertEntity): Long
+
+    @Query("SELECT * From AlertTable where id = :id")
+    suspend fun getAlertsById(id: Int): AlertEntity
+
+    @Delete
+    suspend fun deleteAlert(alertEntity: AlertEntity)
+
+    @Query("select * from AlertTable")
+    suspend fun getAllAlerts(): List<AlertEntity>
 
 
 }

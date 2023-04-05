@@ -2,7 +2,9 @@ package com.example.weatherforecastapp.data.source.local.sharedPreferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import com.example.weatherforecastapp.utils.Constants
+import java.util.Locale
 
 class MySharedPreferences private constructor() {
     companion object {
@@ -12,7 +14,7 @@ class MySharedPreferences private constructor() {
             appContext = context
         }
 
-        fun getSharedPreferences(): SharedPreferences {
+        private fun getSharedPreferences(): SharedPreferences {
             return appContext.getSharedPreferences(
                 Constants.SHARED_PREFERENCES_NAME,
                 Context.MODE_PRIVATE
@@ -27,8 +29,7 @@ class MySharedPreferences private constructor() {
 
         fun getLatitude(): Double? {
             val latitude = getSharedPreferences()
-                .getString(Constants.LATITUDE, Constants.LAT_VALUE.toString())
-
+                .getString(Constants.LATITUDE, Constants.LAT_DEFAULT_VALUE.toString())
             return latitude?.toDouble()
         }
 
@@ -40,7 +41,7 @@ class MySharedPreferences private constructor() {
 
         fun getLongitude(): Double? {
             val longitude = getSharedPreferences()
-                .getString(Constants.LONGITUDE, Constants.LON_VALUE.toString())
+                .getString(Constants.LONGITUDE, Constants.LONG_DEFAULT_VALUE.toString())
 
             return longitude?.toDouble()
         }
@@ -52,7 +53,7 @@ class MySharedPreferences private constructor() {
 
         fun getLocation(): String? {
             return getSharedPreferences()
-                .getString(Constants.LOCATION_CHOICE, "")
+                .getString(Constants.LOCATION_CHOICE, Constants.GPS_LOCATION_VALUES)
         }
 
         fun setTemperature(temp: String?) {
@@ -71,8 +72,9 @@ class MySharedPreferences private constructor() {
         }
 
         fun getLanguage(): String? {
+            Log.i("Shared", Locale.getDefault().language.toString())
             return getSharedPreferences()
-                .getString(Constants.LANGUAGE_CHOICE, Constants.APP_LOCAL_EN_VALUES)
+                .getString(Constants.LANGUAGE_CHOICE, Locale.getDefault().language)
         }
 
         fun setWindSpeed(wind: String?) {
@@ -82,7 +84,17 @@ class MySharedPreferences private constructor() {
 
         fun getWindSpeed(): String? {
             return getSharedPreferences()
-                .getString(Constants.WIND_CHOICE,Constants.WIND_SPEED_METER_SEC_VALUES)
+                .getString(Constants.WIND_CHOICE, Constants.WIND_SPEED_METER_SEC_VALUES)
+        }
+
+
+        fun setAlarm(alarm: String?) {
+            val editor = getSharedPreferences().edit()
+            editor.putString(Constants.ALARM, alarm).apply()
+        }
+
+        fun getAlarm(): String? {
+            return getSharedPreferences().getString(Constants.ALARM, Constants.NOTIFICATION)
         }
 
 

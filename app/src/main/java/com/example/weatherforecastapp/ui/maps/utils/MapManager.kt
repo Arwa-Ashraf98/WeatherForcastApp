@@ -1,4 +1,4 @@
-package com.example.weatherforecastapp.ui.maps
+package com.example.weatherforecastapp.ui.maps.utils
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -22,14 +22,17 @@ import com.google.android.gms.location.*
 class MapManager(
     private val context: Context,
     private val mapsManagerInterface: MapsManagerInterface
-) {
+)  {
     private lateinit var myFusedLocationProviderClient: FusedLocationProviderClient
 
 
-    @RequiresApi(Build.VERSION_CODES.S)
+
     fun getLastLocation() {
+        Log.e("MAP", "getLastLocation: is Called", )
         if (checkPermission()) {
+            Log.e("MAP", "getLastLocation: check permission is true ", )
             if (isLocationEnabled()) {
+                Log.e("MAP", "getLastLocation: check permission is true ", )
                 requestNewLocationData()
             } else {
                 Toast.makeText(context, "Turn on The Location", Toast.LENGTH_SHORT).show()
@@ -43,21 +46,6 @@ class MapManager(
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
-    @SuppressLint("MissingPermission")
-    fun checkPermissionsAndIfLocationIsEnabled() {
-        if (checkPermission()) {
-            if (isLocationEnabled()) {
-                requestNewLocationData()
-            } else {
-                Toast.makeText(context, "Turn on location", Toast.LENGTH_SHORT).show()
-                val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                context.startActivity(intent)
-            }
-        } else {
-            mapsManagerInterface.requestPermission()
-        }
-    }
 
     private fun checkPermission(): Boolean {
         return ActivityCompat.checkSelfPermission(
@@ -70,6 +58,7 @@ class MapManager(
                 ) == PackageManager.PERMISSION_GRANTED
     }
 
+
     private
     fun isLocationEnabled(): Boolean {
         val locationManager =
@@ -79,12 +68,13 @@ class MapManager(
         )
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
+
     @SuppressLint("MissingPermission")
     private fun requestNewLocationData() {
+        Log.e("MAP", "requestNewLocationData: ", )
         val myLocationRequest = LocationRequest()
 
-        myLocationRequest.priority = LocationRequest.QUALITY_HIGH_ACCURACY
+        myLocationRequest.priority = LocationRequest.QUALITY_BALANCED_POWER_ACCURACY
 
         myLocationRequest.interval = 0
 
@@ -95,9 +85,8 @@ class MapManager(
     }
 
     private val myLocationCall: LocationCallback = object : LocationCallback() {
-        @SuppressLint("SetTextI18n")
         override fun onLocationResult(locationResult: LocationResult) {
-            Log.e("TAG", "onLocationResult: ${locationResult.locations[0].toString()}", )
+            Log.e("MAP", "onLocationResult: ${locationResult.locations[0]}", )
             myFusedLocationProviderClient.removeLocationUpdates(this)
             mapsManagerInterface.getLocationResult(locationResult)
         }

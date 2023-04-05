@@ -19,25 +19,59 @@
         android:id="@+id/homeFragment"
         android:name="com.example.weatherforecastapp.ui.home.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="isFromFav"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="favouriteAddress"
+            app:argType="com.example.weatherforecastapp.data.models.FavAddress"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <fragment
         android:id="@+id/alertsFragment"
-        android:name="com.example.weatherforecastapp.ui.alerts.AlertsFragment"
+        android:name="com.example.weatherforecastapp.ui.alerts.view.AlertsFragment"
         android:label="fragment_alerts"
         tools:layout="@layout/fragment_alerts" />
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.example.weatherforecastapp.ui.maps.MapFragment"
+        android:name="com.example.weatherforecastapp.ui.maps.view.MapFragment"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <argument
+            android:name="destination"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.example.weatherforecastapp.ui.favourite.FavouriteFragment"
+        android:name="com.example.weatherforecastapp.ui.favourite.view.FavouriteFragment"
         android:label="fragment_favourite"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_favouriteFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.weatherforecastapp.ui.settings.view.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/alertDialogFragment"
+        android:name="com.example.weatherforecastapp.ui.alerts.view.AlertDialogFragment"
+        android:label="AlertDialogFragment" >
+        <action
+            android:id="@+id/action_alertDialogFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </dialog>
 </navigation>

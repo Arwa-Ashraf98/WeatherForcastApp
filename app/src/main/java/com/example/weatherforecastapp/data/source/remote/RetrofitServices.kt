@@ -18,6 +18,5 @@ interface RetrofitServices {
         @Query("exclude") exclude: String = Constants.EXCLUDE_MINUTELY,
         @Query("appid") apiKey: String = Constants.API_KEY,
         @Query("lang") language: String = MySharedPreferences.getLanguage() as String,
-        @Query("units") units: String = Constants.UNITS_METRIC
     ): Response<ModelRoot>
 }

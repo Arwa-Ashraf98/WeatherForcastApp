@@ -1,23 +1,23 @@
 package com.example.weatherforecastapp.data.models
 
 data class Daily(
-    val clouds: Int,
-    val dew_point: Double,
-    val dt: Long,
+    val clouds: String,
+    val dew_poString: Double,
+    val dt: String,
     val feels_like: FeelsLike,
-    val humidity: Int,
+    val humidity: String,
     val moon_phase: Double,
-    val moonrise: Int,
-    val moonset: Int,
+    val moonrise: String,
+    val moonset: String,
     val pop: Double,
-    val pressure: Int,
+    val pressure: String,
     val rain: Double,
-    val sunrise: Int,
-    val sunset: Int,
+    val sunrise: String,
+    val sunset: String,
     val temp: Temp,
     val uvi: Double,
     val weather: List<Weather>,
-    val wind_deg: Int,
+    val wind_deg: String,
     val wind_gust: Double,
     val wind_speed: Double
 )

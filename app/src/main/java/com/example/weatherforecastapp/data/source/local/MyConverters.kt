@@ -9,16 +9,14 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class MyConverters {
-
-    // take Current and convert into String onc again
     @TypeConverter
-    fun fromCurrentToJson(current: Current): String? {
+    fun fromCurrentToJson(current: Current): String {
         return Gson().toJson(current)
     }
 
     // take String and convert into Current onc again
     @TypeConverter
-    fun fromJsonToCurrent(value: String?): Current? {
+    fun fromJsonToCurrent(value: String): Current {
         return Gson().fromJson(value, Current::class.java)
     }
 
@@ -33,6 +31,7 @@ class MyConverters {
         return Gson().fromJson(value, list)
     }
 
+
     @TypeConverter
     fun fromHourlyListToJson(list: List<Hourly>): String {
         return Gson().toJson(list)
@@ -44,16 +43,19 @@ class MyConverters {
         return Gson().fromJson(value, typeList)
     }
 
-
     @TypeConverter
-    fun fromAlertsListToJson(list: List<Alerts>): String {
-        return Gson().toJson(list)
+    fun fromJsonAlertList(value: String): List<Alerts>? {
+        return if (value.isEmpty()) {
+            null
+        } else {
+            val listType = object : TypeToken<List<Alerts>>() {}.type
+            Gson().fromJson(value, listType)
+        }
     }
 
     @TypeConverter
-    fun fromJsonToAlertsList(value: String): List<Alerts> {
-        val typeList = object : TypeToken<List<Alerts>>() {}.type
-        return Gson().fromJson(value, typeList)
+    fun toJsonAlertList(list: List<Alerts>?): String {
+        return list?.let { Gson().toJson(it) } ?: ""
     }
 
 }

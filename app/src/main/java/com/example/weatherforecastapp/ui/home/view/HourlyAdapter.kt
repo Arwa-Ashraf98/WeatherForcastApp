@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.weatherforecastapp.R
 import com.example.weatherforecastapp.data.models.Hourly
 import com.example.weatherforecastapp.databinding.ItemHoursBinding
 import com.example.weatherforecastapp.utils.Constants
@@ -41,11 +42,11 @@ class HourlyAdapter : RecyclerView.Adapter<HourlyAdapter.Holder>() {
         holder.binding.apply {
             textViewDegree.text =
                 Converters.convertTemperature(model?.temp as Double, holder.binding.root.context)
-            textViewTime.text = Converters.convertTimeStampIntoHours(model.dt)
+            textViewTime.text = Converters.convertTimestampToString(model.dt.toLong(), Converters.TIME_PATTERN_HOUR)
             Glide
                 .with(holder.itemView.context)
-//                .load(HandleIcon.getIcon(model.weather[0].icon))
-                .load(Constants.WEATHER_IMAGE_BASE_URL+model.weather[0].icon+".png")
+                .load(Constants.WEATHER_IMAGE_BASE_URL + model.weather[0].icon + ".png")
+                .placeholder(R.drawable.loading)
                 .into(imageHour)
         }
 

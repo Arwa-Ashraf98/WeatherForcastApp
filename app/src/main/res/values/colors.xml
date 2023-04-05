@@ -68,4 +68,5 @@
     <color name="colorSecondaryButton">#EEEEEE</color>
     <color name="colorAccentHighlight">#20FFFFFF</color>
     <color name="haf_trans3">#A61C1B33</color>
+    <color name="red">#F2C81D0E</color>
 </resources>

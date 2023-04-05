@@ -20,7 +20,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/season"
         android:label="@string/app_name"
-        android:supportsRtl="false"
+        android:supportsRtl="true"
         android:theme="@style/Theme.WeatherForecastApp"
         tools:targetApi="31">
 
@@ -35,15 +35,26 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
-        <!--            android:resource="AIzaSyATb4oX1vlP594iWT-IonD_x46a0GI8DKY"-->
+        <!-- android:resource="AIzaSyATb4oX1vlP594iWT-IonD_x46a0GI8DKY" -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDoedG1Y17WiQCwp_shI0nx2U0_vkpF_9M"
-            />
+            android:value="AIzaSyDoedG1Y17WiQCwp_shI0nx2U0_vkpF_9M" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <service
+            android:name=".ui.alerts.alertServices.AlertService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
@@ -53,6 +64,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -1,20 +1,19 @@
 package com.example.weatherforecastapp.data.models
 
 data class Current(
-    val clouds: Double,
+    val clouds: Int,
     val dew_point: Double,
-    // time stamp will be date
-    val dt: Long,
+    val dt: Int,
     val feels_like: Double,
-    val humidity: Double,
-    val pressure: Double,
-    val sunrise: Double,
-    val sunset: Double,
+    val humidity: Int,
+    val pressure: Int,
+    val sunrise: Int,
+    val sunset: Int,
     val temp: Double,
     val uvi: Double,
-    val visibility: Double,
+    val visibility: Int,
     val weather: List<Weather>,
-    val wind_deg: Double,
+    val wind_deg: Int,
     val wind_gust: Double,
     val wind_speed: Double
 )
